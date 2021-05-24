@@ -1,0 +1,12 @@
+{
+	"pods": {
+		"OneSignal": {
+			"type": "podspec",
+			"src": "OneSignal",
+			"spec": "2.16.2"
+		}
+	},
+	"sources": {},
+	"iosMinVersion": "7.0",
+	"useFrameworks": false
+}

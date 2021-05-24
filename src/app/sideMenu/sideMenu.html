@@ -1,0 +1,121 @@
+<ion-menu menuId="appMenu" contentId="main" side="start"  dir="{{GlobalFields.getLanguageLayout()}}">
+
+  <ion-header translucent="true" style="background-color: #dfa315;" dir="{{GlobalFields.getLanguageLayout()}}">
+    <ion-toolbar>
+      <ion-title>
+        {{'MENU' | translate}}
+      </ion-title>
+      <ion-buttons slot="end" (click)="closeSidebar()">
+        <ion-button color="dark"><ion-icon name="close-outline"></ion-icon></ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content style="background-color: black;">
+
+    <br>
+    <ion-list>
+
+     <ion-item  style="color: white;" class="menuItem"
+                
+                [routerLink]="['/tabs/home']"
+                (click)="closeSidebar()">
+        <i class="fas fa-home" style="font-size: 22px"></i>
+        Home
+      </ion-item>
+
+      <!--- Login -->
+      <ion-item class="menuItem" *ngIf="!GlobalFields.isLoggedIn"  [routerLink]="['/tabs/menuPage']" style="color: white;"  [routerDirection]="'root'"  (click)="closeSidebar()">
+        <i class="{{GlobalFields.site_details.profileTabIcon}}" style="font-size: 22px"></i>
+        {{'LOGIN' | translate}}
+      </ion-item>
+      <!--- Profile -->
+      <ion-item class="menuItem" *ngIf="GlobalFields.isLoggedIn"  [routerLink]="['/tabs/menuPage']" style="color: white;"  [routerDirection]="'root'"  (click)="closeSidebar()">
+        <img *ngIf="GlobalFields.isLoggedIn && GlobalFields.profile && GlobalFields.profile.user" src="{{GlobalFields.profile.user.avatar}}" style="height: 25px; border-radius: 55px; margin-right: 15px;">
+        {{GlobalFields.profile.user.display_name}}
+      </ion-item>
+
+    <!--  <ion-item class="menuItem" [routerLink]="['/tabs/home']" [ngStyle]="getStyleSelectedTab('home')" (click)="closeSidebar()">
+        <i class="{{GlobalFields.site_details.homeTabIcon}}" style="font-size: 22px"></i>
+        Home
+      </ion-item> -->
+
+
+
+      <ion-item  style="color: white;" class="menuItem" *ngIf="GlobalFields.site_details.showCategoriesList"
+                
+                [routerLink]="['/tabs/categoriesList']"
+                (click)="closeSidebar()">
+        <i class="{{GlobalFields.site_details.categoriesTabIcon}}" style="font-size: 22px"></i>
+        {{'CATEGORIES' | translate}}
+      </ion-item>
+
+      <ion-item style="color: white;" class="menuItem" *ngIf="GlobalFields.site_details && GlobalFields.site_details.shopTabIcon"
+                [routerLink]="['/tabs/shop']" 
+                (click)="closeSidebar()">
+        <i class="{{GlobalFields.site_details.shopTabIcon}}" style="font-size: 22px"></i>
+        {{'SHOP' | translate}}
+      </ion-item>
+
+      <ion-item style="color: white;" class="menuItem" *ngIf="GlobalFields.site_details && GlobalFields.site_details.postsTabIcon"
+                [routerLink]="['/tabs/home/posts']" [routerDirection]="'root'" 
+                (click)="GlobalFields.navigateAsRoot=true; closeSidebar()">
+        <i class="{{GlobalFields.site_details.postsTabIcon}}" style="font-size: 22px"></i>
+        {{'BLOG' | translate}}
+      </ion-item>
+
+      <ion-item style="color: white;" class="menuItem" *ngIf="GlobalFields.site_details && GlobalFields.site_details.msgTabIcon"
+                [routerLink]="['/tabs/messages']" 
+                (click)="closeSidebar()">
+        <i class="{{GlobalFields.site_details.msgTabIcon}}" style="font-size: 22px"></i>
+        {{'MESSAGES' | translate}}
+      </ion-item>
+
+      <ion-item  style="color: white !important;" class="menuItem" [routerLink]="['/tabs/menuPage/settings']" [routerDirection]="'root'"
+                (click)="GlobalFields.navigateAsRoot=true; closeSidebar()">
+        <i class="fas fa-cog" style="font-size: 22px"></i>
+        {{'SETTINGS' | translate}}
+      </ion-item>
+
+      <ion-item style="color: white;" [disabled]="!GlobalFields.isLoggedIn" button
+              [routerLink]="['/tabs/menuPage/myListingsPage']" [detail]="false" (click)="closeSidebar()">
+      <ion-icon name="list-outline" slot="start" style="height: 25px;"></ion-icon>
+      <ion-label>
+        {{'MY_LISTINGS' | translate}}
+      </ion-label>
+      <ion-icon *ngIf="GlobalFields.getLanguageLayout()=='ltr'" name="chevron-forward-outline" slot="end" style="height: 20px;"></ion-icon>
+      <ion-icon *ngIf="GlobalFields.getLanguageLayout()=='rtl'" name="chevron-back-outline" slot="end" style="height: 20px;"></ion-icon>
+    </ion-item>
+
+    <ion-item style="color: white;" [disabled]="!GlobalFields.isLoggedIn" button [detail]="false"
+              [routerLink]="['/tabs/menuPage/bookmarksPage']" (click)="closeSidebar()">
+      <ion-icon name="heart-outline" slot="start" style="height: 25px;"></ion-icon>
+      <ion-label>
+        {{'BOOKMARKS' | translate}}
+      </ion-label>
+      <ion-icon *ngIf="GlobalFields.getLanguageLayout()=='ltr'" name="chevron-forward-outline" slot="end" style="height: 20px;"></ion-icon>
+      <ion-icon *ngIf="GlobalFields.getLanguageLayout()=='rtl'" name="chevron-back-outline" slot="end" style="height: 20px;"></ion-icon>
+    </ion-item>
+
+      <ion-item *ngIf="GlobalFields.site_details.enableNotifications" (click)="closeSidebar()" style="color: white;" button [detail]="false" [routerLink]="['/tabs/menuPage/notificationsPage']">
+      <ion-icon name="notifications-outline" slot="start" style="height: 25px;"></ion-icon>
+      <ion-label>
+        {{'NOTIFICATIONS' | translate}}
+      </ion-label>
+      <ion-icon *ngIf="GlobalFields.getLanguageLayout()=='ltr'" name="chevron-forward-outline" slot="end" style="height: 20px;"></ion-icon>
+      <ion-icon *ngIf="GlobalFields.getLanguageLayout()=='rtl'" name="chevron-back-outline" slot="end" style="height: 20px;"></ion-icon>
+    </ion-item>
+
+      <ion-item  style="color: white;" *ngIf="GlobalFields.isLoggedIn" (click)="closeSidebar()" button (click)="logout()" [detail]="false">
+      <ion-icon name="log-out-outline" slot="start" style="height: 25px;"></ion-icon>
+      <ion-label>
+        {{'LOGOUT' | translate}}
+      </ion-label>
+    </ion-item>
+
+    </ion-list>
+
+  </ion-content>
+
+
+</ion-menu>

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1014919062458",
+    "firebase_url": "https://afroplusapp-ebd9f.firebaseio.com",
+    "project_id": "afroplusapp-ebd9f",
+    "storage_bucket": "afroplusapp-ebd9f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1014919062458:android:e274ceeba7d032d092b383",
+        "android_client_info": {
+          "package_name": "de.afroplus.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1014919062458-9nohoin0sngpd7btnmp8gkenc9u1qu9f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPkaZTy6j7DAZsEUDmMja7WhhXUZMuPb8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1014919062458-9nohoin0sngpd7btnmp8gkenc9u1qu9f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

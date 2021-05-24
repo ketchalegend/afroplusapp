@@ -1,0 +1,113 @@
+<ion-header> </ion-header>
+
+<ion-content class="ion-padding">
+  <ion-slides pager="true" style="background-color: black;">
+    <ion-slide class="ion-padding">
+      <img src="../../assets/slide1.png" />
+
+      <div class="slider-text" style="color: white; margin-top: 60px;">
+        <h2>Welcome to AfroPlus</h2>
+        <p>AfroPlus is here to serve you.</p>
+      </div>
+
+      <div class="navigator">
+        <ion-button color="primary" fill="clear" [routerLink]="['/tabs/home']"
+          >SKIP</ion-button
+        >
+        <ion-button color="primary" fill="clear" (click)="next()"
+          >NEXT</ion-button
+        >
+      </div>
+    </ion-slide>
+    <ion-slide class="ion-padding">
+      <img src="../../assets/slidemap.png" />
+
+      <div class="slider-text" style="color: white;">
+        <h2>Map Support</h2>
+        <p>
+          An integrated map function, allows you to get directions to your
+          favorite locations or guide you to interesting businesses near you.
+        </p>
+      </div>
+      <div class="navigator">
+        <ion-button color="primary" fill="clear" [routerLink]="['tabs/home']"
+          >SKIP</ion-button
+        >
+        <ion-button color="primary" fill="clear" (click)="next()"
+          >NEXT</ion-button
+        >
+      </div>
+    </ion-slide>
+    <ion-slide class="ion-padding">
+      <img src="../../assets/slide2.png" />
+
+      <div class="slider-text" style="color: white;">
+        <h2>Connect with the Community</h2>
+        <p>
+          View informations to all relevant events and find out whats happening
+          around you
+        </p>
+        <p>Fast, Convinient and Free</p>
+      </div>
+
+      <div class="navigator">
+        <ion-button color="primary" fill="clear" [routerLink]="['/tabs/home']"
+          >SKIP</ion-button
+        >
+        <ion-button color="primary" fill="clear" (click)="next()"
+          >NEXT</ion-button
+        >
+      </div>
+    </ion-slide>
+    <ion-slide class="ion-padding">
+      <img src="../../assets/ballon.png" />
+
+      <div class="slider-text" style="color: white;">
+        <h2>Push Notifications</h2>
+        <p>
+          Allow push notifications to keep you updated. We will keep you posted
+          with important informations, news and events Don't miss out!
+        </p>
+      </div>
+      <div class="navigator">
+        <ion-button color="primary" fill="clear" [routerLink]="['/tabs/home']"
+          >SKIP</ion-button
+        >
+        <ion-button color="primary" fill="clear" (click)="next()"
+          >NEXT</ion-button
+        >
+      </div>
+    </ion-slide>
+    <ion-slide class="ion-padding">
+      <img src="../../assets/plan.png" />
+
+      <div class="slider-text" style="color: white;">
+        <h2>Offline Access</h2>
+        <p>
+          Bookmark your favorite listings in your personal wishlist. You can
+          access the informations later - without internet connection!
+        </p>
+      </div>
+      <div class="navigator">
+        <ion-button color="primary" fill="clear" [routerLink]="['/tabs/home']"
+          >SKIP</ion-button
+        >
+        <ion-button color="primary" fill="clear" (click)="next()"
+          >NEXT</ion-button
+        >
+      </div>
+    </ion-slide>
+    <ion-slide class="ion-padding">
+      <img src="../../assets/slide3.png" />
+
+      <div class="slider-text" style="color: white;">
+        <h2>Are you ready?</h2>
+        <p>Join the Afro+ Family today!</p>
+      </div>
+
+      <ion-button color="primary" [routerLink]="['/tabs/home']"
+        >Let's Get Started</ion-button
+      >
+    </ion-slide>
+  </ion-slides>
+</ion-content>

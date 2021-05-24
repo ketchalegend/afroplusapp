@@ -1,0 +1,55 @@
+<ion-app style="background-color: black;">
+<div *ngIf="GlobalFields.isLoggedIn; else notLoggedIn">
+ <ion-content *ngIf="GlobalFields.loading" class="cards-bg social-cards" style="z-index: 99999;"  dir="{{GlobalFields.getLanguageLayout()}}">
+    <loading [softLoading]="false"></loading>
+  </ion-content>
+  <ion-content *ngIf="GlobalFields.loadingSoft" class="cards-bg social-cards" style="z-index: 99999;">
+    <loading [softLoading]="true"></loading>
+  </ion-content>
+<!-- <ion-toolbar *ngIf="checkPlatform()"></ion-toolbar> -->
+
+
+    <!-- The app side menu, if used-->
+    <app-sideMenu *ngIf="!GlobalFields.loading && GlobalFields.site_details"></app-sideMenu>
+
+    <!-- the main content -->
+    <ion-router-outlet id="main"  *ngIf="!GlobalFields.loading" [swipeGesture]="true" main></ion-router-outlet>
+
+    </div>
+<ng-template #notLoggedIn>
+    <div
+      class="img-container"
+      style="
+        width: 70%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+        margin-bottom: -120px;
+      "
+    >
+      <img src="../../assets/slide1.png" />
+    </div>
+
+    <div
+      style="
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: auto;
+        margin-top: auto;
+      "
+    >
+      <div style="padding-bottom: 25px" style="color: white; ">
+        <strong>Welcome to AfroPlus.</strong>
+
+        <p>Please register or login into your account</p>
+      </div>
+
+      <loginComponent style="color: white;"></loginComponent>
+    </div>
+  </ng-template>
+
+
+  <!--<ion-nav *ngIf="!GlobalFields.loading" #myNav [root]="rootPage"></ion-nav> -->
+</ion-app>
